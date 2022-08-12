@@ -25,7 +25,7 @@ public class HelpCmd implements SubCommand {
                 continue;
             }
 
-            sender.sendMessage(ChatColor.GRAY + "  -" + ChatColor.AQUA + "/zombies " + cmd.getUsage() + ChatColor.GRAY + " - " + cmd.getDescription());
+            sender.sendMessage(ChatColor.GRAY + "  -" + ChatColor.AQUA + "/bossmobs " + cmd.getUsage() + ChatColor.GRAY + " - " + cmd.getDescription());
         }
 
         return true;

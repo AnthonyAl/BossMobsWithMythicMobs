@@ -26,16 +26,16 @@ public final class CommandsHandler implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage(ChatColor.AQUA + "Wave Mini Game" + ChatColor.GRAY + " is a plugin that uses Mythic Mobs, Corpse Reborn and other, " +
-                    "designed by Antitonius to implement a CoD-like Mini Game for theNRK Minecraft server. To check the help page, type "
-                    + ChatColor.YELLOW + "/zombies help" + ChatColor.GRAY + ".");
+            sender.sendMessage(ChatColor.AQUA + "Boss Mobs" + ChatColor.GRAY + " is a plugin that uses Mythic Mobs designed by Antitonius" +
+                    " for a custom Infernal Mobs implementation in theNRK Minecraft server. To check the help page, type "
+                    + ChatColor.YELLOW + "/bossmobs help" + ChatColor.GRAY + ".");
             return true;
         }
 
         SubCommand command = commands.get(args[0].toLowerCase());
 
         if (command == null) {
-            sender.sendMessage(ChatColor.RED + "Unknown command. To check out the help page, type " + ChatColor.GRAY + "/zombies help" + ChatColor.RED + ".");
+            sender.sendMessage(ChatColor.RED + "Unknown command. To check out the help page, type " + ChatColor.GRAY + "/bossmobs help" + ChatColor.RED + ".");
             return true;
         }
 
@@ -48,7 +48,7 @@ public final class CommandsHandler implements TabExecutor {
         System.arraycopy(args, 1, subCmdArgs, 0, subCmdArgs.length);
 
         if (!command.onCommand(sender, subCmdArgs)) {
-            sender.sendMessage(ChatColor.RED + "Command usage: /zombies " + ChatColor.GRAY + command.getUsage() + ChatColor.RED + ".");
+            sender.sendMessage(ChatColor.RED + "Command usage: /bossmobs " + ChatColor.GRAY + command.getUsage() + ChatColor.RED + ".");
         }
 
         return true;
