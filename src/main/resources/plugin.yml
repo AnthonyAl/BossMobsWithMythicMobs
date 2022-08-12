@@ -9,7 +9,7 @@ website: https://anthonyal.github.io
 commands:
   bossmobs:
     description: Command group for BossMobsWithMythicMobs.
-    aliases: bs
+    aliases: bm
     permission: bossmobs
 permissions:
   bossmobs:
