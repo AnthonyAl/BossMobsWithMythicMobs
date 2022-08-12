@@ -6,3 +6,12 @@ depend: [ MythicMobs ]
 authors: [ Antitonius ]
 description: My Boss Mobs implementation using Mythic Mobs
 website: https://anthonyal.github.io
+commands:
+  bossmobs:
+    description: Command group for BossMobsWithMythicMobs.
+    aliases: bs
+    permission: bossmobs
+permissions:
+  bossmobs:
+    description: Access to all BossMobsWithMythicMobs commands.
+    default: op
