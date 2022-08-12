@@ -1,0 +1,8 @@
+name: BossMobsWithMythicMobs
+version: '${project.version}'
+main: com.unipi.alexandris.bossmobs.bossmobswithmythicmobs.BossMobsWithMythicMobs
+api-version: 1.19
+depend: [ MythicMobs ]
+authors: [ Antitonius ]
+description: My Boss Mobs implementation using Mythic Mobs
+website: https://anthonyal.github.io
