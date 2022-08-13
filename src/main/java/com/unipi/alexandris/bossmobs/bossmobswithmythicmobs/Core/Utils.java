@@ -24,7 +24,7 @@ public abstract class Utils {
         Random r = new Random();
         World world = loc.getWorld();
         double x = getRandomWithExclusion(r, (int)(loc.getX() - max), (int)(loc.getX() + max), (int)(loc.getX() - min), (int)(loc.getX() + min)) + 0.5;
-        double y = r.nextDouble (loc.getY() + max) + 0.5;
+        double y = r.nextInt ((int)loc.getY(), (int)loc.getY() + 2) + 0.5;
         double z = getRandomWithExclusion(r, (int)(loc.getZ() - max), (int)(loc.getZ() + max), (int)(loc.getZ() - min), (int)(loc.getZ() + min)) + 0.5;
         return new Location(world, x, y, z);
     }
