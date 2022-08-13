@@ -2,6 +2,7 @@ package com.unipi.alexandris.bossmobs.bossmobswithmythicmobs.Handlers;
 
 import com.unipi.alexandris.bossmobs.bossmobswithmythicmobs.BossMobsWithMythicMobs;
 import com.unipi.alexandris.bossmobs.bossmobswithmythicmobs.Commands.HelpCmd;
+import com.unipi.alexandris.bossmobs.bossmobswithmythicmobs.Commands.ReloadCmd;
 import com.unipi.alexandris.bossmobs.bossmobswithmythicmobs.Commands.SubCommand;
 import org.bukkit.*;
 import org.bukkit.command.Command;
@@ -21,6 +22,7 @@ public final class CommandsHandler implements TabExecutor {
     public CommandsHandler(BossMobsWithMythicMobs plugin) {
         this.plugin = plugin;
         commands.put("help", new HelpCmd(this));
+        commands.put("reload", new ReloadCmd(plugin));
     }
 
     @Override
