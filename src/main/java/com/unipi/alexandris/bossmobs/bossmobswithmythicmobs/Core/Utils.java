@@ -17,7 +17,7 @@ public abstract class Utils {
 
     public static boolean calcChance(int rarity) {
         Random r = new Random();
-        return r.nextInt() < rarity;
+        return r.nextInt(100) < rarity;
     }
 
     public static Location randLoc(Location loc, int min, int max) {
