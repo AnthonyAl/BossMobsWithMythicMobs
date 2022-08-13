@@ -32,8 +32,8 @@ public abstract class Utils {
     public static boolean validateSpawnLoc(Location loc, int radius) {
 
         for(int x = (int)(loc.getX() - radius - 1); x < loc.getX() + radius; x++)
-            for(int y = (int)(loc.getY() - radius - 1); x < loc.getY() + radius; y++)
-                for(int z = (int)(loc.getZ() - radius - 1); x < loc.getZ() + radius; z++)
+            for(int y = (int)(loc.getY()- 1); y < loc.getY() + radius; y++)
+                for(int z = (int)(loc.getZ() - radius - 1); z < loc.getZ() + radius; z++)
                     if(!loc.getWorld().getBlockAt(new Location(loc.getWorld(), x, y, z)).isEmpty()) return false;
         return true;
     }

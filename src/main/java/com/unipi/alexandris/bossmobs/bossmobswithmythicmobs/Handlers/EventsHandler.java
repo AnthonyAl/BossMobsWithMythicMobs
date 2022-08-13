@@ -30,7 +30,7 @@ public final class EventsHandler implements Listener {
         Location loc = event.getEntity().getLocation();
         for(int i = 0; i <= 5; i++) {
             loc = Utils.randLoc(loc, plugin.config.getRadius_min(), plugin.config.getRadius_max());
-            if(Utils.validateSpawnLoc(loc, 2)) break;
+            if(Utils.validateSpawnLoc(loc, 1)) break;
             if(i == 5) return;
         }
 
