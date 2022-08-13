@@ -57,7 +57,54 @@ public final class ConfigHandler {
         getLogger().info(config.get_mobs(EntityType.SKELETON, 0) + ".");
         getLogger().info(config.get_mobs(EntityType.SKELETON, 1) + ".");
         getLogger().info(config.get_mobs(EntityType.SKELETON, 2) + ".");
-    };
+    }
 
+    public List<String> get_mobs(EntityType key, int rarity) {
+        return config.get_mobs(key, rarity);
+    }
+
+    public int getRadius_min() {
+        return config.getRadius_min();
+    }
+
+    public int getRadius_max() {
+        return config.getRadius_max();
+    }
+
+    public int getLevel_common_min() {
+        return config.getLevel_common_min();
+    }
+
+    public int getLevel_common_max() {
+        return config.getLevel_common_max();
+    }
+
+    public int getLevel_rare_min() {
+        return config.getLevel_rare_min();
+    }
+
+    public int getLevel_rare_max() {
+        return config.getLevel_rare_max();
+    }
+
+    public int getLevel_legendary_min() {
+        return config.getLevel_legendary_min();
+    }
+
+    public int getLevel_legendary_max() {
+        return config.getLevel_legendary_max();
+    }
+
+    public int getProb_common() {
+        return config.getProb_common();
+    }
+
+    public int getProb_rare() {
+        return config.getProb_rare();
+    }
+
+    public int getProb_legendary() {
+        return config.getProb_legendary();
+    }
 
 }
