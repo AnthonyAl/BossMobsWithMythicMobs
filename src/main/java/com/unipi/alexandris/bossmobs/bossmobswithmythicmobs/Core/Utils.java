@@ -23,10 +23,21 @@ public abstract class Utils {
     public static Location randLoc(Location loc, int min, int max) {
         Random r = new Random();
         World world = loc.getWorld();
-        double x = r.nextDouble(loc.getX() + min, loc.getX() + max) + 0.5;
+        double x = getRandomWithExclusion(r, (int)(loc.getX() - max), (int)(loc.getX() + max), (int)(loc.getX() - min), (int)(loc.getX() + min)) + 0.5;
         double y = r.nextDouble (loc.getY() + max) + 0.5;
-        double z = r.nextDouble(loc.getZ() + min, loc.getZ() + max) + 0.5;
+        double z = getRandomWithExclusion(r, (int)(loc.getZ() - max), (int)(loc.getZ() + max), (int)(loc.getZ() - min), (int)(loc.getZ() + min)) + 0.5;
         return new Location(world, x, y, z);
+    }
+
+    private static int getRandomWithExclusion(Random rnd, int start, int end, int exclude_start, int exclude_end) {
+        int random = start + rnd.nextInt(end - start + 1 - (exclude_end - exclude_start));
+        for (int ex = exclude_start; ex <= exclude_end; ex++) {
+            if (random < ex) {
+                break;
+            }
+            random++;
+        }
+        return random;
     }
 
     public static boolean validateSpawnLoc(Location loc, int radius) {
