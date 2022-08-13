@@ -59,6 +59,10 @@ public final class ConfigHandler {
         getLogger().info(config.get_mobs(EntityType.SKELETON, 2) + ".");
     }
 
+    public boolean contains(EntityType key) {
+        return config.contains(key);
+    }
+
     public List<String> get_mobs(EntityType key, int rarity) {
         return config.get_mobs(key, rarity);
     }

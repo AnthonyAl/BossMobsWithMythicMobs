@@ -24,8 +24,13 @@ public class Config {
         mob_map.put(type, mobs);
     }
 
+    public boolean contains(EntityType key) {
+        return mob_map.containsKey(key);
+    }
+
     public List<String> get_mobs(EntityType key, int rarity) {
-        return mob_map.get(key)[rarity];
+        if(mob_map.containsKey(key)) return mob_map.get(key)[rarity];
+        else return null;
     }
 
     public int getRadius_min() {
