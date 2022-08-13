@@ -9,13 +9,15 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
+import org.bukkit.util.StringUtil;
+
+import java.util.*;
 
 public final class CommandsHandler implements TabExecutor {
 
     private final BossMobsWithMythicMobs plugin;
+
+    private final List<String> COMMANDS = Arrays.asList("help", "reload");
 
     private final HashMap<String, SubCommand> commands = new HashMap<>();
 
@@ -58,7 +60,13 @@ public final class CommandsHandler implements TabExecutor {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-        return null;
+        //create new array
+        final List<String> completions = new ArrayList<>();
+        //copy matches of first argument from list (ex: if first arg is 'm' will return just 'minecraft')
+        StringUtil.copyPartialMatches(args[0], COMMANDS, completions);
+        //sort the list
+        Collections.sort(completions);
+        return completions;
     }
 
     public BossMobsWithMythicMobs getPlugin() {
