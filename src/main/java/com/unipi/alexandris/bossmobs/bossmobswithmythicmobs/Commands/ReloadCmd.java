@@ -17,6 +17,8 @@ public class ReloadCmd implements SubCommand{
 
     @Override
     public boolean onCommand(CommandSender sender, String[] args) {
+        sender.sendMessage("Reloading BossMobs.. .  . ");
+        plugin.reloadConfig();
         plugin.config = new ConfigHandler(plugin);
         return true;
     }
