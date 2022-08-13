@@ -15,9 +15,9 @@ public abstract class Utils {
         return list.get(r.nextInt(list.size()));
     }
 
-    public static boolean calcChance(int rarity) {
+    public static boolean calcChance(double rarity) {
         Random r = new Random();
-        return r.nextInt(100) < rarity;
+        return r.nextDouble(100) < rarity;
     }
 
     public static Location randLoc(Location loc, int min, int max) {

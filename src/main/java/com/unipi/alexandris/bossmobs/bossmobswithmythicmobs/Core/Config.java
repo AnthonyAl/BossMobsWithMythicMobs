@@ -15,9 +15,9 @@ public class Config {
     private int level_rare_max;
     private int level_legendary_min;
     private int level_legendary_max;
-    private int prob_common;
-    private int prob_rare;
-    private int prob_legendary;
+    private double prob_common;
+    private double prob_rare;
+    private double prob_legendary;
     private final HashMap<EntityType, List<String>[]> mob_map = new HashMap<>();
 
     public void put_to_map(EntityType type, List<String>[] mobs) {
@@ -97,27 +97,27 @@ public class Config {
         this.level_legendary_max = level_legendary_max;
     }
 
-    public int getProb_common() {
+    public double getProb_common() {
         return prob_common;
     }
 
-    public void setProb_common(int prob_common) {
+    public void setProb_common(double prob_common) {
         this.prob_common = prob_common;
     }
 
-    public int getProb_rare() {
+    public double getProb_rare() {
         return prob_rare;
     }
 
-    public void setProb_rare(int prob_rare) {
+    public void setProb_rare(double prob_rare) {
         this.prob_rare = prob_rare;
     }
 
-    public int getProb_legendary() {
+    public double getProb_legendary() {
         return prob_legendary;
     }
 
-    public void setProb_legendary(int prob_legendary) {
+    public void setProb_legendary(double prob_legendary) {
         this.prob_legendary = prob_legendary;
     }
 }

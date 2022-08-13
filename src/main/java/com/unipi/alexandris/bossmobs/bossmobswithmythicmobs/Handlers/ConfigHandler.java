@@ -27,9 +27,9 @@ public final class ConfigHandler {
         config.setLevel_rare_max(fileConfiguration.getInt("level_range.rare.max"));
         config.setLevel_legendary_min(fileConfiguration.getInt("level_range.legendary.min"));
         config.setLevel_legendary_max(fileConfiguration.getInt("level_range.legendary.max"));
-        config.setProb_common(fileConfiguration.getInt("probabilities.common"));
-        config.setProb_rare(fileConfiguration.getInt("probabilities.rare"));
-        config.setProb_legendary(fileConfiguration.getInt("probabilities.legendary"));
+        config.setProb_common(fileConfiguration.getDouble("probabilities.common"));
+        config.setProb_rare(fileConfiguration.getDouble("probabilities.rare"));
+        config.setProb_legendary(fileConfiguration.getDouble("probabilities.legendary"));
 
         for(EntityType type : EntityType.values()) {
             String path = "mobs.";
@@ -99,15 +99,15 @@ public final class ConfigHandler {
         return config.getLevel_legendary_max();
     }
 
-    public int getProb_common() {
+    public double getProb_common() {
         return config.getProb_common();
     }
 
-    public int getProb_rare() {
+    public double getProb_rare() {
         return config.getProb_rare();
     }
 
-    public int getProb_legendary() {
+    public double getProb_legendary() {
         return config.getProb_legendary();
     }
 

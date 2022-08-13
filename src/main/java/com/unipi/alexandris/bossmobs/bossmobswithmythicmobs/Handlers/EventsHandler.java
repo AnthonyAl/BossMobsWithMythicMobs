@@ -39,8 +39,8 @@ public final class EventsHandler implements Listener {
         List<String> legendary = plugin.config.get_mobs(event.getEntityType(), 2);
 
         if(common != null && Utils.calcChance(plugin.config.getProb_common())) new BossMob(Utils.rand(common), loc).inst();
-        else if(rare != null && Utils.calcChance(plugin.config.getProb_common())) new BossMob(Utils.rand(rare), loc).inst();
-        else if(legendary != null && Utils.calcChance(plugin.config.getProb_common())) new BossMob(Utils.rand(legendary), loc).inst();
+        else if(rare != null && Utils.calcChance(plugin.config.getProb_rare())) new BossMob(Utils.rand(rare), loc).inst();
+        else if(legendary != null && Utils.calcChance(plugin.config.getProb_legendary())) new BossMob(Utils.rand(legendary), loc).inst();
 
     }
 }

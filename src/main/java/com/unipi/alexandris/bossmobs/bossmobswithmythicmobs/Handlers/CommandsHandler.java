@@ -17,8 +17,6 @@ public final class CommandsHandler implements TabExecutor {
 
     private final BossMobsWithMythicMobs plugin;
 
-    private final List<String> COMMANDS = Arrays.asList("help", "reload");
-
     private final HashMap<String, SubCommand> commands = new HashMap<>();
 
     public CommandsHandler(BossMobsWithMythicMobs plugin) {
@@ -63,7 +61,7 @@ public final class CommandsHandler implements TabExecutor {
         //create new array
         final List<String> completions = new ArrayList<>();
         //copy matches of first argument from list (ex: if first arg is 'm' will return just 'minecraft')
-        StringUtil.copyPartialMatches(args[0], COMMANDS, completions);
+        StringUtil.copyPartialMatches(args[0], commands.keySet().stream().toList(), completions);
         //sort the list
         Collections.sort(completions);
         return completions;
