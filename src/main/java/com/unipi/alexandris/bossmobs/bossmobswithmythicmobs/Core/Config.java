@@ -7,6 +7,9 @@ import java.util.List;
 
 public class Config {
 
+    private boolean player_kill_only;
+
+    private int empty_space_spawn;
     private int radius_min;
     private int radius_max;
     private int level_common_min;
@@ -31,6 +34,22 @@ public class Config {
     public List<String> get_mobs(EntityType key, int rarity) {
         if(mob_map.containsKey(key)) return mob_map.get(key)[rarity];
         else return null;
+    }
+
+    public boolean isPlayer_kill_only() {
+        return player_kill_only;
+    }
+
+    public void setPlayer_kill_only(boolean player_kill_only) {
+        this.player_kill_only = player_kill_only;
+    }
+
+    public int getEmpty_space_spawn() {
+        return empty_space_spawn;
+    }
+
+    public void setEmpty_space_spawn(int empty_space_spawn) {
+        this.empty_space_spawn = empty_space_spawn;
     }
 
     public int getRadius_min() {

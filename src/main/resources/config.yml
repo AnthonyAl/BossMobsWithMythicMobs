@@ -1,8 +1,16 @@
+#If this is set to True, Lord mobs will only spawn from player-killed entities.
+player_kill_only: True
+
+#Do not set this value very high as it will cause lag!
+#If you have mythic mobs with large hit-boxes (e.g. Iron Golem) increase the value to 3.
+empty_space_spawn: 1
+
+#A Lord Mob will spawn over 'min',  and less than 'max' blocks away from the killed entity.
 radius:
   min: 5
   max: 15
 
-
+#This section determines the level range (from 'min' to 'max') for each Lord Mob rarity.
 level_range:
   common:
     min: 1
@@ -14,13 +22,13 @@ level_range:
     min: 6
     max: 10
 
-
+#This section determines the probability for each Lord Mob to spawn when an entity is killed.
 probabilities:
   common: 10
   rare: 5
   legendary: 1
 
-
+#This section maps a minecraft entity to your custom MythicMob Lords.
 mobs:
   skeleton:
     common: [SkeletalMinion, WITHER_SKELETON ]

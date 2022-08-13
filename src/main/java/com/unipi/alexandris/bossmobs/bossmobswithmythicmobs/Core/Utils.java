@@ -5,23 +5,27 @@ import org.bukkit.World;
 
 import java.util.List;
 import java.util.Random;
-
-import static org.bukkit.Bukkit.getServer;
+import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Utils {
 
     public static String rand(List<String> list) {
-        Random r = new Random();
+        ThreadLocalRandom r = ThreadLocalRandom.current();
         return list.get(r.nextInt(list.size()));
     }
 
+    public static int randLevel(int min, int max) {
+        ThreadLocalRandom r = ThreadLocalRandom.current();
+        return r.nextInt(min, max);
+    }
+
     public static boolean calcChance(double rarity) {
-        Random r = new Random();
+        ThreadLocalRandom r = ThreadLocalRandom.current();
         return r.nextDouble(100) < rarity;
     }
 
     public static Location randLoc(Location loc, int min, int max) {
-        Random r = new Random();
+        ThreadLocalRandom r = ThreadLocalRandom.current();
         World world = loc.getWorld();
         double x = getRandomWithExclusion(r, (int)(loc.getX() - max), (int)(loc.getX() + max), (int)(loc.getX() - min), (int)(loc.getX() + min)) + 0.5;
         double y = r.nextInt ((int)loc.getY(), (int)loc.getY() + 2) + 0.5;

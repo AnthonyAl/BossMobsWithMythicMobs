@@ -10,23 +10,21 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
 public final class CommandsHandler implements TabExecutor {
 
-    private final BossMobsWithMythicMobs plugin;
-
     private final HashMap<String, SubCommand> commands = new HashMap<>();
 
     public CommandsHandler(BossMobsWithMythicMobs plugin) {
-        this.plugin = plugin;
         commands.put("help", new HelpCmd(this));
         commands.put("reload", new ReloadCmd(plugin));
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args) {
         if (args.length == 0) {
             sender.sendMessage(ChatColor.AQUA + "Boss Mobs" + ChatColor.GRAY + " is a plugin that uses Mythic Mobs designed by Antitonius" +
                     " for a custom Infernal Mobs implementation in theNRK Minecraft server. To check the help page, type "
@@ -57,7 +55,7 @@ public final class CommandsHandler implements TabExecutor {
     }
 
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, String[] args) {
         //create new array
         final List<String> completions = new ArrayList<>();
         //copy matches of first argument from list (ex: if first arg is 'm' will return just 'minecraft')
@@ -65,10 +63,6 @@ public final class CommandsHandler implements TabExecutor {
         //sort the list
         Collections.sort(completions);
         return completions;
-    }
-
-    public BossMobsWithMythicMobs getPlugin() {
-        return plugin;
     }
 
     public Collection<SubCommand> getCommands() {

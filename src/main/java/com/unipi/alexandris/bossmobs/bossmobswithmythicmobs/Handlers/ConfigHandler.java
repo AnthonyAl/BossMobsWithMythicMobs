@@ -7,18 +7,16 @@ import org.bukkit.entity.EntityType;
 
 import java.util.List;
 
-import static org.bukkit.Bukkit.getLogger;
-
+@SuppressWarnings("unused")
 public final class ConfigHandler {
 
-    private final BossMobsWithMythicMobs plugin;
     private final Config config = new Config();
-    private final FileConfiguration fileConfiguration;
 
     public ConfigHandler(BossMobsWithMythicMobs plugin) {
-        this.plugin = plugin;
-        fileConfiguration = plugin.getConfig();
+        FileConfiguration fileConfiguration = plugin.getConfig();
 
+        config.setPlayer_kill_only(fileConfiguration.getBoolean("player_kill_only"));
+        config.setEmpty_space_spawn(fileConfiguration.getInt("empty_space_spawn"));
         config.setRadius_min(fileConfiguration.getInt("radius.min"));
         config.setRadius_max(fileConfiguration.getInt("radius.max"));
         config.setLevel_common_min(fileConfiguration.getInt("level_range.common.min"));
@@ -42,29 +40,21 @@ public final class ConfigHandler {
         }
     }
 
-    public void readConfig() {
-        getLogger().info(config.getLevel_common_min() + ".");
-        getLogger().info(config.getLevel_common_max() + ".");
-        getLogger().info(config.getLevel_rare_min() + ".");
-        getLogger().info(config.getLevel_rare_max() + ".");
-        getLogger().info(config.getLevel_legendary_min() + ".");
-        getLogger().info(config.getLevel_legendary_max() + ".");
-        getLogger().info(config.getRadius_min() + ".");
-        getLogger().info(config.getRadius_max() + ".");
-        getLogger().info(config.getProb_common() + ".");
-        getLogger().info(config.getProb_rare() + ".");
-        getLogger().info(config.getProb_legendary() + ".");
-        getLogger().info(config.get_mobs(EntityType.SKELETON, 0) + ".");
-        getLogger().info(config.get_mobs(EntityType.SKELETON, 1) + ".");
-        getLogger().info(config.get_mobs(EntityType.SKELETON, 2) + ".");
-    }
-
     public boolean contains(EntityType key) {
         return config.contains(key);
     }
 
     public List<String> get_mobs(EntityType key, int rarity) {
         return config.get_mobs(key, rarity);
+    }
+
+
+    public boolean isPlayer_kill_only() {
+        return config.isPlayer_kill_only();
+    }
+
+    public int getEmpty_space_spawn() {
+        return config.getEmpty_space_spawn();
     }
 
     public int getRadius_min() {
