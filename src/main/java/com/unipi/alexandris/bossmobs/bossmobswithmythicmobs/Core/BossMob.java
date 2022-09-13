@@ -13,24 +13,15 @@ public final class BossMob {
 
     private final Location location;
 
-    private final int rarity;
 
-    public BossMob(String type, int rarity, Location location) {
+    public BossMob(String type, Location location) {
         this.type = type;
         this.location = location;
-        this.rarity = rarity;
     }
 
-    public void inst(ConfigHandler config, MythicBukkit mythicBukkit) {
+    public void inst(MythicBukkit mythicBukkit) {
         try{
-            int level = switch (rarity) {
-                case 0 -> Utils.randLevel(config.getLevel_common_min(), config.getLevel_common_max());
-                case 1 -> Utils.randLevel(config.getLevel_rare_min(), config.getLevel_rare_max());
-                case 2 -> Utils.randLevel(config.getLevel_legendary_min(), config.getLevel_legendary_max());
-                default -> 1;
-            };
-
-            mythicBukkit.getAPIHelper().spawnMythicMob(type, location, level);
+            mythicBukkit.getAPIHelper().spawnMythicMob(type, location, 1);
         }
         catch(Exception e) {
             getLogger().warning("The mythic mob of type " + type + " does not exist.");

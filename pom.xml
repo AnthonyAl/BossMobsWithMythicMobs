@@ -6,7 +6,7 @@
 
     <groupId>com.unipi.alexandris.bossmobs</groupId>
     <artifactId>BossMobsWithMythicMobs</artifactId>
-    <version>1.0-RELEASE</version>
+    <version>1.1-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>BossMobsWithMythicMobs</name>

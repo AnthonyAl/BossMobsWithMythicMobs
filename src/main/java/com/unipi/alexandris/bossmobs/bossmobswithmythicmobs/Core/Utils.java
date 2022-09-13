@@ -14,9 +14,9 @@ public abstract class Utils {
         return list.get(r.nextInt(list.size()));
     }
 
-    public static int randLevel(int min, int max) {
+    public static double randDouble(double max) {
         ThreadLocalRandom r = ThreadLocalRandom.current();
-        return r.nextInt(min, max);
+        return r.nextDouble(max);
     }
 
     public static boolean calcChance(double rarity) {

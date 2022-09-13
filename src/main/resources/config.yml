@@ -1,6 +1,9 @@
 #If this is set to True, Lord mobs will only spawn from player-killed entities.
 player_kill_only: True
 
+#If this is set to True, Lord mobs will spawn from killed mobs summoned by a spawner.
+spawner: False
+
 #Do not set this value very high as it will cause lag!
 #If you have mythic mobs with large hit-boxes (e.g. Iron Golem) increase the value to 3.
 empty_space_spawn: 1
@@ -10,35 +13,21 @@ radius:
   min: 5
   max: 15
 
-#This section determines the level range (from 'min' to 'max') for each Lord Mob rarity.
-level_range:
-  common:
-    min: 1
-    max: 2
-  rare:
-    min: 3
-    max: 5
-  legendary:
-    min: 6
-    max: 10
-
-#This section determines the probability for each Lord Mob to spawn when an entity is killed.
-probabilities:
-  common: 10
-  rare: 5
-  legendary: 1
-
 #This section maps a minecraft entity to your custom MythicMob Lords.
 mobs:
   skeleton:
-    common: [SkeletalMinion, WITHER_SKELETON ]
-    rare: [ SkeletalKnight ]
-    legendary: [ SkeletonKing ]
+    #Give a weight for no mob to spawn (otherwise a lord from above will always be summoned)
+    no_spawn: 84
+    #Specify a list of mythic mobs to spawn and give them a spawn weight
+    lords:
+      - SkeletalMinion, WITHER_SKELETON  :10
+      - SkeletalKnight, SkeletonKing  :1
   zombie:
-    common:
-    rare: [ StaticallyChargedSheep ]
-    legendary: [ GIANT ]
+    no_spawn: 3
+    lords:
+      - StaticallyChargedSheep :5
+      - GIANT :1
   spider:
-    common: [ CAVE_SPIDER ]
-    rare:
-    legendary: [ AngrySludge ]
+    lord:
+      - CAVE_SPIDER :50
+      - AngrySludge :10
