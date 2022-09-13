@@ -27,14 +27,14 @@ public final class ConfigHandler {
         for(EntityType type : EntityType.values()) {
             String path = "mobs.";
             if(!fileConfiguration.contains(path += type.toString().toLowerCase())) continue;
-            List<String> mobs = (List<String>) fileConfiguration.getList(path+"lords");
+            List<String> mobs = (List<String>) fileConfiguration.getList(path+".lords");
             config.put_to_map(type, mobs);
         }
     }
 
     public double getNoSpawn(EntityType type) {
         FileConfiguration fileConfiguration = plugin.getConfig();
-        return fileConfiguration.getDouble("mobs." + type.toString().toLowerCase() + "no_spawn");
+        return fileConfiguration.getDouble("mobs." + type.toString().toLowerCase() + ".no_spawn");
     }
 
     public boolean contains(EntityType key) {
