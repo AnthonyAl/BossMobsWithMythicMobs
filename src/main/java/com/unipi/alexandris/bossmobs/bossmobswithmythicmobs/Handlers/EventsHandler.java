@@ -54,8 +54,10 @@ public final class EventsHandler implements Listener {
         double pull = Utils.randDouble(total);
         if(pull > noDrop)
             for(Double weight : weights.keySet())
-                if(pull <= weight)
+                if(pull <= weight) {
                     new BossMob(Utils.rand(Arrays.stream(weights.get(weight)).toList()), loc).inst(mythicBukkit);
+                    break;
+                }
 
     }
 }
