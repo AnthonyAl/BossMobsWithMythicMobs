@@ -26,7 +26,7 @@ public final class EventsHandler implements Listener {
 
     @EventHandler
     public void onMobPerish(EntityDeathEvent event) {
-        if(plugin.config.isSpawner() && event.getEntity().getEntitySpawnReason().equals(CreatureSpawnEvent.SpawnReason.SPAWNER)) return;
+        if(!plugin.config.isSpawner() && event.getEntity().getEntitySpawnReason().equals(CreatureSpawnEvent.SpawnReason.SPAWNER)) return;
         if(!plugin.config.contains(event.getEntityType())) return;
 
         MythicBukkit mythicBukkit = (MythicBukkit)(getServer().getPluginManager().getPlugin("MythicMobs"));
