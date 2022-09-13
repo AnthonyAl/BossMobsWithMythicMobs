@@ -19,7 +19,7 @@ public final class ConfigHandler {
         FileConfiguration fileConfiguration = plugin.getConfig();
 
         config.setPlayer_kill_only(fileConfiguration.getBoolean("player_kill_only"));
-        config.setSpawner(fileConfiguration.getBoolean("spawner"));
+        config.setNatural_only(fileConfiguration.getBoolean("natural_only"));
         config.setEmpty_space_spawn(fileConfiguration.getInt("empty_space_spawn"));
         config.setRadius_min(fileConfiguration.getInt("radius.min"));
         config.setRadius_max(fileConfiguration.getInt("radius.max"));
@@ -45,8 +45,8 @@ public final class ConfigHandler {
         return config.get_mobs(key);
     }
 
-    public boolean isSpawner() {
-        return config.isSpawner();
+    public boolean isNaturalOnly() {
+        return config.isNatural_only();
     }
 
     public boolean isPlayer_kill_only() {

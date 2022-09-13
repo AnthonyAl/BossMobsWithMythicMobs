@@ -9,7 +9,7 @@ public class Config {
 
     private boolean player_kill_only;
 
-    private boolean spawner;
+    private boolean natural_only;
 
     private int empty_space_spawn;
     private int radius_min;
@@ -36,12 +36,12 @@ public class Config {
         this.player_kill_only = player_kill_only;
     }
 
-    public boolean isSpawner() {
-        return spawner;
+    public boolean isNatural_only() {
+        return natural_only;
     }
 
-    public void setSpawner(boolean spawner) {
-        this.spawner = spawner;
+    public void setNatural_only(boolean natural_only) {
+        this.natural_only = natural_only;
     }
 
     public int getEmpty_space_spawn() {

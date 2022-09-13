@@ -1,8 +1,8 @@
 #If this is set to True, Lord mobs will only spawn from player-killed entities.
 player_kill_only: True
 
-#If this is set to True, Lord mobs will spawn from killed mobs summoned by a spawner.
-spawner: False
+#If this is set to True, Lord mobs will only spawn from naturally spawned mob deaths.
+natural_only: True
 
 #Do not set this value very high as it will cause lag!
 #If you have mythic mobs with large hit-boxes (e.g. Iron Golem) increase the value to 3.
